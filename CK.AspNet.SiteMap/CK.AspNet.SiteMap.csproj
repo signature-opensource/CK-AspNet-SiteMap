@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CK.DB.HWorkspace.Page" Version="0.2.2" />
-    <PackageReference Include="CK.SqlServer.Dapper" Version="7.0.0" />
+    <PackageReference Include="CK.DB.HWorkspace.Page" Version="0.2.3--0014-develop" />
+    <PackageReference Include="CK.SqlServer.Dapper" Version="7.0.1--0023-develop" />
   </ItemGroup>
 
   <ItemGroup>

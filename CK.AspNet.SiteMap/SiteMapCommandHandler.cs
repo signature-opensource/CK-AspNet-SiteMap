@@ -15,13 +15,14 @@ namespace CK.AspNet.SiteMap
                                                      ISiteMapQCommand cmd,
                                                      SiteMapQueries queries )
         {
-            var siteMap = await queries.GetUserSiteMapAsync( ctx, cmd.ActorId );
-            var home = await queries.GetPreferredWorkspacePagePathAsync( ctx, cmd.ActorId, cmd.ActorId );
+            Throw.DebugAssert(cmd.ActorId.HasValue);
+            var siteMap = await queries.GetUserSiteMapAsync( ctx, cmd.ActorId.Value );
+            var home = await queries.GetPreferredWorkspacePagePathAsync( ctx, cmd.ActorId.Value, cmd.ActorId.Value );
             return cmd.CreateResult( s =>
             {
                 s.Home = home;
                 s.Pages.AddRange( siteMap );
-                s.Pov.AddRange( siteMap.Where( i => i.Path.IndexOf( '$' ) == i.Path.LastIndexOf( '/' ) + 1 ) // Is a POV page
+                s.PointOfViews.AddRange( siteMap.Where( i => i.Path.IndexOf( '$' ) == i.Path.LastIndexOf( '/' ) + 1 ) // Is a POV page
                                        .Select( i => (i.Path.Substring( i.Path.LastIndexOf( '/' ) + 1 ), i.PageTitle) )
                                        .DistinctBy( i => i.Item1 ) );
             } );
