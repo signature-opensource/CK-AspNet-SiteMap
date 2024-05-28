@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CK.AspNet.SiteMap", "CK.AspNet.SiteMap\CK.AspNet.SiteMap.csproj", "{AAAD300C-1133-4937-88BE-F4E8678FF22C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CK.AspNet.SiteMap", "CK.AspNet.SiteMap\CK.AspNet.SiteMap.csproj", "{AAAD300C-1133-4937-88BE-F4E8678FF22C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AF651580-6C6F-49D5-A809-FB73CDD5F5FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D97F6FF6-F0FB-42A2-8CC3-F48E620DD56A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CK.IO.AspNet.SiteMap", "CK.IO.AspNet.SiteMap\CK.IO.AspNet.SiteMap.csproj", "{7DAC97A2-5EBC-4388-8CC6-B07C96D68B79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,10 @@ Global
 		{AAAD300C-1133-4937-88BE-F4E8678FF22C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAAD300C-1133-4937-88BE-F4E8678FF22C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAAD300C-1133-4937-88BE-F4E8678FF22C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DAC97A2-5EBC-4388-8CC6-B07C96D68B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DAC97A2-5EBC-4388-8CC6-B07C96D68B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DAC97A2-5EBC-4388-8CC6-B07C96D68B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DAC97A2-5EBC-4388-8CC6-B07C96D68B79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

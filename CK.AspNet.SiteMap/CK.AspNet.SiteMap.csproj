@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CK.AspNet.SiteMap.IO\CK.AspNet.SiteMap.IO.csproj" />
+    <ProjectReference Include="..\CK.IO.AspNet.SiteMap\CK.IO.AspNet.SiteMap.csproj" />
   </ItemGroup>
 
 </Project>

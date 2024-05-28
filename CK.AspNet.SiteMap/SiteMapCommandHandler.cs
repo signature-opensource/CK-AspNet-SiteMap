@@ -1,5 +1,6 @@
 using CK.Core;
 using CK.Cris;
+using CK.IO.AspNet.SiteMap;
 using CK.SqlServer;
 using System.Linq;
 using System.Threading.Tasks;
