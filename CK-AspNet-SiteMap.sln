@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CK.IO.AspNet.SiteMap", "CK.IO.AspNet.SiteMap\CK.IO.AspNet.SiteMap.csproj", "{7DAC97A2-5EBC-4388-8CC6-B07C96D68B79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CK.AspNet.SiteMap.Tests", "Tests\CK.AspNet.SiteMap.Tests\CK.AspNet.SiteMap.Tests.csproj", "{21EC1CB9-7412-4C22-AA41-5AA33FDD80A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CK.AspNet.SiteMap.Tests", "Tests\CK.AspNet.SiteMap.Tests\CK.AspNet.SiteMap.Tests.csproj", "{21EC1CB9-7412-4C22-AA41-5AA33FDD80A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
