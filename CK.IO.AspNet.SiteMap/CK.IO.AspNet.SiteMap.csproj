@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CK.IO.Auth" Version="0.29.1--0049-develop" />
-    <PackageReference Include="CK.StObj.TypeScript" Version="0.18.1--0091-develop" />
+    <PackageReference Include="CK.IO.Auth" Version="0.31.1--0023-develop" />
+    <PackageReference Include="CK.Cris.TypeScript" Version="0.31.1--0023-develop" />
   </ItemGroup>
 
 </Project>

@@ -3,32 +3,24 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <UpdateClientCKGen>true</UpdateClientCKGen>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CK.DB.HWorkspace.Page" Version="0.2.3--0014-develop" />
-    <PackageReference Include="CK.SqlServer.Dapper" Version="7.0.1--0023-develop" />
+    <PackageReference Include="CK.Cris.AspNet" Version="0.31.1--0023-develop" />
+    <PackageReference Include="CK.DB.HWorkspace.Page" Version="0.2.3--0029-develop" />
+    <PackageReference Include="CK.SqlServer.Dapper" Version="7.0.1--0036-develop" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CK.IO.AspNet.SiteMap\CK.IO.AspNet.SiteMap.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Message Text="Installing CKSetup." Importance="high" />
-    <!--First, the CKSetup tool defined in ../.config/dotnet-tools.json is restored (if needed).-->
+<Target Condition=" '$(UpdateClientCKGen)' == 'true' " Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="dotnet tool restore" />
-    <!--
-         Then, the CKSetup tool is ran, using a 'Release' log level for the Console that avoids too much noise in your "Build Output" window.
-         The file (LastRun.log) doesn't filter the logs: it will contain all the logs emitted by the process and the default level is driven
-         by the CKSetup.xml <LogLevel>Debug</LogLevel> element.
-
-         Note that each WorkingDirectory still contains its own CKSetup.log.
-        -->
     <Delete Files="LastRun.log" />
     <Message Text="Running CKSetup." Importance="high" />
     <Exec Command="dotnet cksetup run CKSetup.xml -v Release --logFile LastRun.log" />
-    <Message Text="CKSetup successful." Importance="high" />
-  </Target>
+</Target>
 
 </Project>
