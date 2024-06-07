@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CK.Cris.AspNet" Version="0.31.1--0024-develop" />
-    <PackageReference Include="CK.DB.HWorkspace.Page" Version="0.2.3--0029-develop" />
-    <PackageReference Include="CK.SqlServer.Dapper" Version="7.0.1--0036-develop" />
+    <PackageReference Include="CK.Cris.AspNet" Version="0.31.1--0031-develop" />
+    <PackageReference Include="CK.DB.HWorkspace.Page" Version="0.2.3--0030-develop" />
+    <PackageReference Include="CK.SqlServer.Dapper" Version="7.0.1--0037-develop" />
   </ItemGroup>
 
   <ItemGroup>

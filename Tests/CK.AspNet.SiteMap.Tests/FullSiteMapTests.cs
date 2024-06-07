@@ -41,7 +41,7 @@ namespace CK.AspNet.SiteMap.Tests
                                                                  targetOutputPath,
                                                                  registeredTypes: types,
                                                                  tsTypes: Type.EmptyTypes,
-                                                                 runner => TestHelper.SuspendAsync( resume => resume ) );
+                                                                 resume => resume );
         }
     }
 }
