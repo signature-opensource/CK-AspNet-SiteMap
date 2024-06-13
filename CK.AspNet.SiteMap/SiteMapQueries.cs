@@ -9,16 +9,16 @@ namespace CK.AspNet.SiteMap
 {
     public class SiteMapQueries : IAutoService
     {
-        readonly WorkspaceTable _workspaceTable;
+        readonly CK.DB.HWorkspace.Page.Package _pages;
 
-        public SiteMapQueries( WorkspaceTable workspaceTable )
+        public SiteMapQueries( CK.DB.HWorkspace.Page.Package pages )
         {
-            _workspaceTable = workspaceTable;
+            _pages = pages;
         }
 
         public async Task<IEnumerable<(string Path, string PageTitle)>> GetUserSiteMapAsync( ISqlCallContext ctx, int userId )
         {
-            return await ctx[_workspaceTable].QueryAsync<(string Path, string PageTitle)>(
+            return await ctx[_pages].QueryAsync<(string Path, string PageTitle)>(
                 @"select substring( wp.ResPath, 3, len( wp.ResPath ) - 2 ) as [Path], wp.PageTitle
                   from CK.vWebPage wp
                   inner join CK.vAclActor aa on wp.AclId = aa.AclId and aa.ActorId = @UserId
@@ -29,7 +29,7 @@ namespace CK.AspNet.SiteMap
 
         public async Task<string> GetPreferredWorkspacePagePathAsync( ISqlCallContext ctx, int actorId, int userId )
         {
-            return await ctx[_workspaceTable].QuerySingleOrDefaultAsync<string>(
+            return await ctx[_pages].QuerySingleOrDefaultAsync<string>(
                 @"select substring( wp.ResPath, 3, len( wp.ResPath ) - 2 )
                   from CK.tUser u
                   inner join CK.tWorkspace w on u.PreferredWorkspaceId = w.WorkspaceId

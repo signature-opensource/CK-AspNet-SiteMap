@@ -8,10 +8,10 @@ using static CK.Testing.SqlServerTestHelper;
 namespace CK.AspNet.SiteMap.Tests
 {
     [TestFixture]
-    public partial class FullSiteMapTests
+    public partial class SiteMapTests
     {
         [Test]
-        public async Task E2ETest_Async()
+        public async Task test_SiteMap_Async()
         {
             //
             // When running in Debug, this will wait until resume is set to true.
@@ -35,8 +35,8 @@ namespace CK.AspNet.SiteMap.Tests
             var engineConfiguration = TestHelper.CreateDefaultEngineConfiguration();
             TestHelper.EnsureSqlServerConfigurationAspect( engineConfiguration );
 
-            var targetOutputPath = TestHelper.GetTypeScriptWithTestsSupportTargetProjectPath();
-            Throw.DebugAssert( targetOutputPath.EndsWith( "/TSTests/E2ETest_Async" ) );
+            var targetOutputPath = TestHelper.GetTypeScriptBuildModeTargetProjectPath();
+            Throw.DebugAssert( targetOutputPath.EndsWith( "/TSBuildAndTests/test_SiteMap" ) );
             await TestHelper.RunSingleBinPathAspNetE2ETestAsync( engineConfiguration,
                                                                  targetOutputPath,
                                                                  registeredTypes: types,
